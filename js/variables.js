@@ -75,6 +75,12 @@ const imageUrls = [
   `${IMG_PATH}bg-game.png`,
 ];
 
+const soundUrls = [
+  `${SOUND_PATH}correct.mp3`,
+  `${SOUND_PATH}error.mp3`,
+  `${SOUND_PATH}background.mp3`
+];
+
 const QUESTION_DETAILS = {
   question1: {
     reference: `Mach F, et al. 2019 ESC/EAS Guidelines for the management of dyslipidaemias: lipid modification to reduce

@@ -229,6 +229,11 @@ function updateQuestionUI(question) {
   QUESTIONS_HEADER.textContent = question.question;
   REFERENCE.innerHTML = question.reference;
 
+  if(question.isThreeOptions){
+    ANSWER_ITEMS[3].classList.add('hidden');
+  }else {
+    ANSWER_ITEMS[3].classList.remove('hidden');
+  }
   ANSWER_ITEMS.forEach((item, i) => {
     item.querySelector(".answer__text").textContent = question.answers[i];
   });

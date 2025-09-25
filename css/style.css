@@ -589,6 +589,11 @@ height: 50dvh; */
     line-height: 1;
 }
 
+.hidden {
+    visibility: hidden;
+    pointer-events: none;
+}
+
 .result-img {
     width: 20dvh;
     max-width: 15%;
@@ -765,6 +770,7 @@ height: 50dvh; */
     font-size: 27px;
     line-height: 29px;
 }
+
 
 
 @media only screen and (max-width: 1500px) and (orientation: portrait) {
