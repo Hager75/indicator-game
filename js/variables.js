@@ -75,11 +75,6 @@ const imageUrls = [
   `${IMG_PATH}bg-game.png`,
 ];
 
-const soundUrls = [
-  `${SOUND_PATH}correct.mp3`,
-  `${SOUND_PATH}error.mp3`,
-  `${SOUND_PATH}background.mp3`
-];
 
 const QUESTION_DETAILS = {
   question1: {

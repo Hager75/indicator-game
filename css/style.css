@@ -119,7 +119,7 @@ body {
 
 /* game page  */
 .game-page {
-    /* display: none; */
+    display: none;
     background-image: url("../images/bg-game.png");
     background-position: center;
     background-size: cover;
