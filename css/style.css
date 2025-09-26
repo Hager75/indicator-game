@@ -626,6 +626,11 @@ height: 50dvh; */
         font-size: 10px;
     }
 
+    .circle {
+     font-size: 0.8em !important;
+
+    }
+
 }
 
 @media (max-width: 800px) {
