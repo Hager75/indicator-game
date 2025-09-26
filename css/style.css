@@ -474,6 +474,7 @@ height: 50dvh; */
     text-transform: uppercase;
     font-family: var(--font-letter-bold);
     flex-shrink: 0;
+      font-size: clamp(14px, 0.45em, 28px);
 
 }
 
@@ -626,10 +627,10 @@ height: 50dvh; */
         font-size: 10px;
     }
 
-    .circle {
+    /* .circle {
      font-size: 0.8em !important;
 
-    }
+    } */
 
 }
 
