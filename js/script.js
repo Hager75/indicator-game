@@ -42,8 +42,6 @@ function gotoNextPage() {
     default:
       break;
   }
-  console.log(currentPage);
-
   currentPage++;
 }
 
@@ -230,9 +228,9 @@ function updateQuestionUI(question) {
   REFERENCE.innerHTML = question.reference;
 
   if(question.isThreeOptions){
-    ANSWER_ITEMS[3].classList.add('hidden');
+    ANSWER_ITEMS[3]?.classList?.add('hidden');
   }else {
-    ANSWER_ITEMS[3].classList.remove('hidden');
+    ANSWER_ITEMS[3]?.classList?.remove('hidden');
   }
   ANSWER_ITEMS.forEach((item, i) => {
     item.querySelector(".answer__text").textContent = question.answers[i];
@@ -244,23 +242,46 @@ function endQuiz() {
   lowerTimeout && clearTimeout(lowerTimeout);
   if (correctCountAnswers > 4) {
     showHidePages(LOSER, WINNER);
+    startSound(WIN_SOUND);
+    RESULT_PAGE.classList?.remove('result-bg-lose');
   } else {
     showHidePages(WINNER, LOSER);
+    startSound(LOSE_SOUND);
+    RESULT_PAGE.classList?.add('result-bg-lose');
+
   }
   showHidePages(GAME_PAGE, RESULT_PAGE, "block");
 }
 
 
+function preloadAllAssets(onComplete) {
+  let loaded = 0;
+  const total = imageUrls.length + sounds.length;
+
+  const checkDone = () => {
+    loaded++;    
+    if (loaded === total && typeof onComplete === "function") onComplete(false);
+  };
+
+  // Preload images
+  imageUrls.forEach(src => {
+    const img = new Image();
+    img.onload = checkDone;
+    img.onerror = checkDone;
+    img.src = src;
+  });
+
+  // Preload sounds
+  sounds.forEach(audio => {
+    audio.preload = "auto";
+    audio.oncanplaythrough = checkDone;
+    audio.onerror = checkDone;
+    audio.load(); // start loading immediately
+  });
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
   toggleLoader(true);
-  imageUrls.forEach((url) => {
-    const img = new Image();
-    img.src = url;
-    img.onload = img.onerror = () => {
-      loadedCount++;
-      if (loadedCount === imageUrls.length) {
-        toggleLoader(false);
-      }
-    };
-  });
+  preloadAllAssets(toggleLoader)
 });
