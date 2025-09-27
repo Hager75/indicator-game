@@ -110,9 +110,8 @@ recent myocardial infarction?`,
     reference: `Koskinas, C.K., Windecker S., Pedrazzini G., Mueller C., Cook S.,
 Matter C.M., et al. J Am Coll Cardiol 74(20), pp. 2452-2462.`,
     headerImg: `${IMG_PATH}GAME copy-07.png`,
-    question: `In the Evopacs study, what percentage of ACS patients
-achieved the LDL-C targets of &lt;55m/dl after just one
-month of initiating Repatha?`,
+    question: `In the Evopacs study, what percentage of ACS patients achieved the LDL-C targets of <55m/dl
+after just one month of initiating Repatha?`,
     answers: ["45%", "65%", "75%", "90%"],
     correctAnswerIndex: 3,
   },
